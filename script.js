@@ -40,6 +40,17 @@ function updateProgress() {
   timestamp.innerHTML = `${mins}:${secs}`;
 };
 
+// Set video time to progress
+function setVideoProgress() {
+  video.currentTime = (+progress.value * video.duration) / 100;
+};
+
+// Stop Video
+function stopVideo() {
+  video.currentTime = 0;
+  video.pause();
+};
+
 // Event Listeners
 video.addEventListener('click', toggleVideoStatus);
 video.addEventListener('pause', updatePlayIcon);
